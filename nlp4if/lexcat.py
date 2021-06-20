@@ -121,6 +121,9 @@ def sample_scores(target: pd.DataFrame,
     # (n_samples)
     scores = not_reduced.mean(axis=0)
 
+    # scale to be in [-1, 1] and not [0, 1]
+    scores = -1 + 2 * scores
+
     return scores
 
 
